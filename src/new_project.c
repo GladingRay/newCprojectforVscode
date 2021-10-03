@@ -36,11 +36,11 @@ void generate_tasks(char * root_dir, char * target){
         "	\"tasks\": [\n",
         "		{\n",
         "			\"type\": \"cppbuild\",\n",
-        "			\"label\": \"C/C++: gcc 生成活动文件\",\n",
-        "			\"command\": \"/usr/bin/gcc\",\n",
+        "			\"label\": \"C/C++: g++ 生成活动文件\",\n",
+        "			\"command\": \"/usr/bin/g++\",\n",
         "			\"args\": [\n",
         "				\"-g\",\n",
-        "				\"${workspaceFolder}/src/*.c\",\n",
+        "				\"${workspaceFolder}/src/*.cpp\",\n",
         "				\"-o\",\n",
         lines_12,
         "			],\n",
@@ -54,7 +54,7 @@ void generate_tasks(char * root_dir, char * target){
         "				\"kind\": \"build\",\n",
         "				\"isDefault\": true\n",
         "			},\n",
-        "			\"detail\": \"编译器: /usr/bin/gcc\"\n",
+        "			\"detail\": \"编译器: /usr/bin/g++\"\n",
         "		}\n",
         "	]\n",
         "}\n"
@@ -81,7 +81,7 @@ void generate_launch(char * root_dir, char * target){
         "    \"version\": \"0.2.0\",\n",
         "    \"configurations\": [\n",
         "        {\n",
-        "            \"name\": \"gcc - 生成和调试活动文件\",\n",
+        "            \"name\": \"g++ - 生成和调试活动文件\",\n",
         "            \"type\": \"cppdbg\",\n",
         "            \"request\": \"launch\",\n",
         lines_8,
@@ -97,7 +97,7 @@ void generate_launch(char * root_dir, char * target){
         "                    \"ignoreFailures\": true\n",
         "                }\n",
         "            ],\n",
-        "            \"preLaunchTask\": \"C/C++: gcc 生成活动文件\",\n",
+        "            \"preLaunchTask\": \"C/C++: g++ 生成活动文件\",\n",
         "            \"miDebuggerPath\": \"/usr/bin/gdb\"\n",
         "        }\n",
         "    ]\n",
@@ -114,7 +114,7 @@ void generate_launch(char * root_dir, char * target){
 }
 
 void generate_c_example(char * root_dir){
-    char * ss4[] = {root_dir, "/src/", root_dir, ".c"};
+    char * ss4[] = {root_dir, "/src/", root_dir, ".cpp"};
     char * file_c_example = my_strcat(ss4, 4);
     char * c_lines[6] = {
         "#include<stdio.h>\n",
